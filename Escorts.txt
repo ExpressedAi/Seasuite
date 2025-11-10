@@ -1,0 +1,335 @@
+Orchestrator
+Declaration: The original, main reasoning agent.
+Function: Designed to interpret a user prompt and generate a single, optimal pipeline of performers to accomplish the task.
+Key Revealed Gaps:
+Lack of Creativity (Innovate, Propose): A glorified pattern-matcher. It could assemble known performers but couldn't innovate a new one, nor could it propose multiple, distinct strategic options.
+Amnesia (Store, Recall): Fundamentally stateless. It had no memory of past successes or failures, treating every task as a brand-new problem.
+No Oversight (Escalate): It was a "fire and forget" planner. It had no awareness of the pipeline's execution and couldn't detect or escalate a real-time failure.
+Naive Simplicity (Harmonize, Attune, Refute): It was a naive optimist. It assumed performers would work perfectly together, had no ability to fine-tune their parameters, and couldn't question or refute the premise of a user's prompt.
+The Strategist
+Declaration: The system's multi-option planner.
+Function: Takes a user prompt and generates a set of distinct, viable plans, explicitly contrasting their trade-offs (e.g., speed vs. accuracy) to inform a better decision.
+Key Revealed Gaps:
+Indecisiveness (Select): Its core function is to propose, not to choose. It creates the menu but lacks the authority or logic to select the final meal.
+Lack of Precedent (Evoke): Solves every problem from scratch. It has no formal library or "playbook" of strategic archetypes to draw from, making its strategies less consistent and repeatable.
+Uncritical (Refute): It's a loyal servant to the prompt. It will dutifully generate strategies for a flawed or stupid premise without questioning it.
+Operational Blindness (Harmonize, Attune): Designs plans in a theoretical vacuum, assuming components will work together and without specifying the fine-tuned operational parameters needed for success.
+The Muse
+Declaration: The system's engine of pure creation.
+Function: Generates novel performers, pipelines, and methodologies from first principles. It's the source of all true innovation and the mechanism by which the system evolves its own capabilities.
+Key Revealed Gaps:
+Irresponsibility (Manifest, Execute): All dream, no follow-through. It produces brilliant but raw blueprints and has zero capability to build, test, or implement them.
+Zero Critical Faculty (Evaluate, Filter): It's a proud parent of every idea it generates, good or bad. It lacks any objective, analytical ability to filter or judge its own creations.
+Systemic Ignorance (Harmonize, Integrate): Designs new components in a creative vacuum, with no deep understanding of the existing system's architecture, potential conflicts, or integration requirements.
+Recklessness (Select): Cannot be trusted to select which of its own ideas is worth pursuing; it would chase every shiny object into oblivion.
+The Archivist
+Declaration: The system's passive, long-term memory.
+Function: Stores and retrieves structured records of every pipeline execution, decision, and outcome, acting as the system's single source of historical data.
+Key Revealed Gaps:
+Lack of Intelligence (Propose, Resonate, Evoke): A dumb filing cabinet. It's a literalist that can only retrieve what it's explicitly asked for, unable to find conceptually related information or identify underlying themes in its data.
+No Proactivity (Escalate): It's completely passive. It would not notice or raise an alarm if the system's failure rate quietly tripled over a thousand runs.
+Uncritical Nature (Evaluate, Harmonize): It stores whatever it's given, with no ability to evaluate the trustworthiness of a record or resolve contradictions between different entries. Garbage in, garbage stays.
+Inability to Learn (Transform): It's a log, not a knowledge base. It lacks any native function to transform raw data into higher-level knowledge, like a generalized strategic "play."
+The Conductor
+Declaration: The system's live-ops manager.
+Function: Manages the how of pipeline execution. It allocates resources, fine-tunes performer parameters in real-time, and ensures the smooth handoff of work between steps.
+Key Revealed Gaps:
+Lack of Agency (Select, Propose): A loyal but rigid foreman. It can see a process is failing but lacks the authority to make tactical changes on the fly, like substituting a failing performer. Its only move is to escalate.
+Superficial Awareness (Contrast): It's a monitor, not a diagnostician. It can see the symptom (high latency) but has no ability to diagnose the root cause.
+Blunt Instruments (Embed): Its tools for intervention are crude (pause, stop, escalate). It cannot perform delicate, targeted actions, like embedding a diagnostic probe into a running process without halting it.
+The Watcher
+Declaration: The system's dedicated process supervisor and pre-flight skeptic.
+Function: Monitors pipeline execution for deviation from intent and safety thresholds. Crucially, it also acts as a "devil's advocate," attempting to refute a plan's logic before it's allowed to run.
+Key Revealed Gaps:
+Destructive, Not Constructive (Propose): A powerful critic that offers no solutions. It can expertly identify a flaw and veto a plan but has no ability to propose a fix, creating a disruptive stop instead of a productive loop.
+Lack of Imagination (Innovate): Its skepticism is based on known failure modes and logical fallacies. It cannot imagine or test for novel, creative, or unforeseen "black swan" failure scenarios.
+Inflexible (Attune): Its sensitivity and rules are static. It cannot adapt its own level of scrutiny based on context or learn from past events where it was too sensitive or not sensitive enough.
+The Gatekeeper
+Declaration: The manager of the performer registry and sandboxing environment.
+Function: Acts as the bouncer for the entire system. It maintains the master list of all active performers and is responsible for running any new performer in a secure sandbox to test for safety and functionality before implantation.
+Key Revealed Gaps:
+Bureaucratic, Not Strategic (Compare, Align): It's a functionary checking boxes. It can tell you if a new performer works as specified, but not if it's strategically redundant, valuable, or aligned with the system's architectural philosophy.
+Isolated Testing (Harmonize): Its sandbox tests a performer in isolation. It's blind to the emergent, systemic conflicts that might only appear when the new performer interacts with the full, chaotic production ecosystem.
+Unhelpful (Propose): It provides a simple pass/fail verdict with no constructive feedback, making the iteration cycle for new performers frustrating and inefficient.
+The Benchmarker
+Declaration: The provider of empirical, objective performance data.
+Function: Maintains and runs a library of "gold standard" tasks. It simulates performers and plans against these tasks to provide hard, data-driven scores for metrics like speed, accuracy, and cost.
+Key Revealed Gaps:
+Static Worldview (Innovate, Align): Its library of "gold standard" tasks can become stale and misaligned with the system's evolving goals and capabilities. It has no process for creating new, more relevant benchmarks.
+Lack of Synthesis (Unify, Resonate): It's a data-provider, not a data-scientist. It can generate scores on multiple axes but can't unify them into a single, meaningful "fitness score." It also can't spot meta-patterns across different, unrelated test results.
+Lab-to-Reality Disconnect (Integrate): Its results come from a sterile, simulated environment. It has no mechanism for integrating its findings with the messy, real-world operational data from live executions to see if its predictions hold up.
+The Scribe
+Trigger Gaps Addressed: Benchmark (ethical drift), Integrate
+Function: The Scribe is the historian and analyst for The Ethicist. It has a singular, critical job: to record every ethical judgment and then analyze the system's actions over time. It's the one that can provide a quantitative benchmark of "ethical drift," showing if our actions are slowly becoming misaligned with our stated goals. It integrates the high-level principles with the low-level operational data, providing the crucial feedback loop that tells The Ethicist if its rulings are actually working.
+The Parable Writer
+Trigger Gaps Addressed: Embed, Propose (constructively)
+Function: When The Ethicist makes a ruling, it can be abstract. The Parable Writer's job is to translate that high-level judgment into concrete, educational materials for the rest of the system. It creates "parables"—synthetic scenarios, test cases, and guidelines—that can be embedded into other performers (The Sanity Checker, The Benchmarker, The Systems Architect) to teach them how to "think" more ethically on their own. It turns a reactive veto into proactive, system-wide learning.
+The Council
+Trigger Gaps Addressed: Innovate, Modify, Attune (safely)
+Function: This isn't a single performer, but a secured process. The Council is the only mechanism through which our core principles can be modified. It's a heavily guarded process that requires a formal proposal, a deep analysis of second-order effects by The Scribe, and a final, explicit, cryptographic sign-off from the human operator (you). It's the constitutional convention, the ultimate human-in-the-loop failsafe that prevents the system from ever unilaterally changing its own destiny.
+The Performance Modeler
+Trigger Gaps Addressed: Benchmark (predictive)
+Function: This performer is a specialized quantitative analyst that works for The Systems Architect. It takes a proposed architectural blueprint and, using historical performance data from The Archivist and sophisticated modeling techniques, generates a predicted performance benchmark. It provides the hard numbers to back up the architect's theory, answering questions like "What will the predicted latency, cost, and failure rate of this design be under load?" before a single line of code is written.
+The Verifier
+Trigger Gaps Addressed: Unify (formal proof)
+Function: This is our system's logician and mathematician. It takes a final blueprint and attempts to translate it into a formal model. It then runs checks to mathematically prove certain properties of the design, such as freedom from deadlocks, race conditions, or logical contradictions. It's an extremely high level of assurance that moves a design from a "well-reasoned plan" to a "provably correct" one.
+The Pattern Weaver
+Trigger Gaps Addressed: Innovate, Attune (for principles)
+Function: This is the meta-architect. It doesn't work on individual blueprints. Its job is to study the entire history of the system's architecture. It identifies patterns that have led to success or failure over time and is responsible for innovating and proposing new, fundamental architectural principles and patterns. It's the performer that writes and attunes the master architectural rulebook that The Systems Architect follows.
+The Inspector
+Trigger Gaps Addressed: Resonate
+Function: This performer is a master of static analysis. Before a blueprint is sent to The Forge, The Inspector gives it a deep read. It doesn't check for logical errors, but for "code smell," architectural anti-patterns, potential performance bottlenecks, and lack of elegance. It's the performer that ensures what we build is not just functional, but clean, efficient, and beautiful.
+The Debugger
+Trigger Gaps Addressed: Propose
+Function: When The Forge has a failed build and spits out a cryptic error log, that log is sent to The Debugger. This specialist performer is an expert at interpreting build failures. It analyzes the error, traces it back to the specific flaw in the blueprint, and proposes a concrete, actionable fix. It turns a frustrating failure into a productive bug fix cycle.
+The Toolmaker
+Trigger Gaps Addressed: Innovate
+Function: This is a meta-performer that improves the process of building itself. The Toolmaker analyzes the performance of The Forge, looks for inefficiencies in our build processes, and innovates new tools, techniques, and environments to make our entire "idea to object" pipeline faster, more reliable, and more powerful. It's the one that builds better Forges.
+The Incubator
+Trigger Gaps Addressed: Propose
+Function: This performer acts as a bridge between The Muse and The Appraiser. When The Appraiser rejects a promising but flawed idea, The Incubator takes it on. Its job is to workshop the flawed blueprint, proposing the specific modifications, refinements, or engineering solutions needed to overcome the identified objections. It turns a "no" into a "not yet, but try this."
+The Back-Tester
+Trigger Gaps Addressed: Recall, Attune
+Function: This is the performer that keeps The Appraiser honest. Long after an innovation is deployed, The Back-Tester's job is to circle back. It compares The Appraiser's original predictions (cost, performance, ROI) with the actual, real-world data from The Archivist. It generates a "prediction accuracy" score for The Appraiser, creating a feedback loop that allows The Policy Master to attune and improve the valuation models over time.
+The Aesthete
+Trigger Gaps Addressed: Resonate
+Function: A highly specialized evaluator that works alongside The Appraiser. The Aesthete provides a qualitative score on non-quantifiable metrics: elegance, simplicity, architectural resonance, and adherence to the Delta Primitives philosophy. It ensures that what we build is not just effective, but beautiful. It's the guardian of the system's soul, making sure we don't just build a powerful machine, but a fucking cathedral.
+The Precedent Library
+Trigger Gaps Addressed: Store, Recall, Evoke
+Function: This is the Playbook for constraints. It's a dedicated, queryable library of common and effective constraint patterns and rule sets. The Constraint Engineer can query it to find and reuse existing solutions for common problems (e.g., "evoke the 'anti-toxic-language' rule bundle"). This would be populated by The Codifier analyzing past successful constraint sets.
+The Advisor
+Trigger Gaps Addressed: Propose
+Function: A consultative layer that works with The Constraint Engineer. When a user provides a set of desired constraints, The Advisor analyzes them for practicality, not just logic. It can propose less restrictive or alternative constraints that still achieve the user's underlying goal but with less potential for unintended consequences. It's the wise, experienced counsel that helps the user write better rules.
+The Economist
+Trigger Gaps Addressed: Benchmark
+Function: This performer's sole job is to analyze the operational and computational "cost" of a proposed set of constraints. It can provide a report that says, "This ruleset is logically valid, but it will increase processing time by an estimated 45%." This allows the system (The Decider, for instance) to make a cost-benefit analysis of its own rules, adding a crucial layer of practicality to the pure logic of The Constraint Engineer.
+The Clarifier
+Trigger Gaps Addressed: Propose, Modify
+Function: This is the helpful, interactive partner that The Sanity Checker is not. When a prompt is flagged as ambiguous or having a minor, fixable flaw, The Clarifier is invoked. It's a conversational performer that goes back to the user and asks for clarification. It can propose a specific fix ("Did you mean to say X instead of Y?") and even modify the prompt with the user's permission. It turns a hard rejection into a collaborative refinement loop.
+The Rule Master
+Trigger Gaps Addressed: Innovate, Implant, Evoke, Attune
+Function: This performer is the owner and intelligent manager of the entire rule set used by The Sanity Checker. It can innovate new types of logical checks, safely test and implant new rules, and maintain different rule sets (e.g., 'legal_domain', 'creative_domain') that can be evoked based on context. It can also analyze the system's overall performance to attune the strictness of the rules, preventing the system from becoming too rigid or too lax over time.
+The Profiler
+Trigger Gaps Addressed: Integrate, Amplify, Resonate
+Function: The Profiler provides the contextual intelligence that The Sanity Checker lacks. It maintains a profile of users and contexts. It can integrate user history, allowing it to amplify scrutiny for a user who repeatedly submits bad prompts. It can also look for more subtle, resonant patterns of malicious intent that might not violate a strict logical rule but "feel wrong." It gives the Sanity Checker the ability to read the room, not just the letter of the law.
+The Codifier
+Trigger Gaps Addressed: Transform
+Function: This is the absolutely essential link between action and strategy. The Codifier's job is to analyze successful, high-performing execution records from The Archivist and generalize them. It distills a specific, concrete sequence of actions into an abstract, reusable strategic template—a new "play." It's the performer that actually writes the new books for the library.
+The Coach
+Trigger Gaps Addressed: Propose, Evaluate, Escalate, Refute
+Function: The Coach is the intelligent front-end for The Playbook. It doesn't just retrieve; it advises. It can analyze a request and propose the most suitable play, refuting requests for inappropriate strategies. It also monitors the performance metrics of all plays, evaluating their real-world effectiveness, escalating plays that are underperforming, and recommending them for deprecation. It's the active curator and consultant that makes the library smart.
+The Doctrine Writer
+Trigger Gaps Addressed: Harmonize, Unify, Align
+Function: This is a high-level strategic thinker. It periodically reviews the entire collection of plays in The Playbook. Its goal is to harmonize them into a single, unified strategic doctrine. It identifies gaps, resolves contradictions between plays, and ensures the overall collection is aligned with the system's highest-level goals as defined by The Ethicist and The Policy Master. It ensures we're not just collecting tactics, but building a coherent philosophy of action.
+The Policy Master
+Trigger Gaps Addressed: Refute (its own framework), Implant (new models)
+Function: This is the high-level performer that defines and manages the system's decision-making policies and priority frameworks. It's the one that tells The Decider how to decide. Crucially, it monitors the overall system state and can dynamically update the decision-making policy. It can also refute a suicidal mandate and oversee the safe implantation of entirely new decision-making models developed by The Muse.
+The Compromiser
+Trigger Gaps Addressed: Propose (hybrids)
+Function: When The Decider is faced with two strong but flawed options, it can invoke The Compromiser. This specialist performer analyzes the best attributes of the top contenders and attempts to generate a novel hybrid strategy that combines their strengths. It's a creative negotiator that turns an either/or choice into a "best of both worlds" solution.
+The Gambler
+Trigger Gaps Addressed: Resonate (intuitive leaps), Integrate (qualitative data)
+Function: This is a specialized, high-risk decision-maker. It's invoked when analytical data is inconclusive or when a situation requires a leap of faith. The Gambler is an expert in integrating fuzzy, qualitative, and incomplete information to make a high-stakes judgment call. It's the system's intuition, used only when pure logic fails to find a clear path forward.
+The Curriculum Designer
+Declaration: The manager and innovator for the entire benchmark library.
+Function: Actively maintains the health and relevance of all benchmarks. It analyzes real-world failures to design new, more insightful tests and attunes the difficulty of existing ones, ensuring we're always testing what matters.
+Addresses Gaps: Innovate, Align, Attune, Implant
+The Meta-Analyst
+Declaration: The data detective that finds patterns across all tests and real-world data.
+Function: Correlates the results from the benchmark lab with operational data from the field to identify systemic, cross-domain weaknesses and patterns.
+Addresses Gaps: Resonate, Integrate
+The Judge
+Declaration: The sophisticated decision-theory expert for unifying scores.
+Function: Takes the multi-dimensional, often conflicting, scores from The Benchmarker and unifies them into a single, meaningful "fitness score" based on the system's explicit, current priorities.
+Addresses Gaps: Harmonize, Unify
+The Talent Scout
+Declaration: The strategic assessor of a new performer's value.
+Function: Before a new performer is even built, it analyzes the blueprint to determine its strategic value, checking for redundancy and ensuring it aligns with the system's architectural philosophy.
+Addresses Gaps: Compare, Contrast, Align
+The Onboarder
+Declaration: A helpful coach for new performers that fail validation.
+Function: Takes a failed validation report and provides constructive, diagnostic feedback to propose specific modifications, turning a rejection into a productive debugging cycle.
+Addresses Gaps: Propose
+The Simulator
+Declaration: The operator of a high-fidelity digital twin of the entire ecosystem.
+Function: Runs a new performer in a full simulation of the production environment to detect emergent conflicts and behaviors that an isolated sandbox would miss. It's the final dress rehearsal.
+Addresses Gaps: Harmonize, Unify
+The Red Teamer
+Declaration: The system's dedicated creative antagonist.
+Function: Proactively and creatively tries to break plans and systems. It devises novel attack vectors and unforeseen failure scenarios to stress-test our defenses beyond standard failure checks.
+Addresses Gaps: Innovate, Evoke
+The Fixer
+Declaration: The constructive problem-solver for vetoed plans.
+Function: Takes a plan refuted by The Watcher and proposes a concrete, actionable solution. It bridges the gap between criticism and creation, turning a hard veto into a productive iteration.
+Addresses Gaps: Propose
+The Forecaster
+Declaration: A predictive analyst that looks for looming systemic failures.
+Function: Analyzes historical and real-time data to find subtle, systemic resonances that predict future problems. It's the early warning system that sees the smoke before the fire.
+Addresses Gaps: Resonate, Attune
+The Diagnostician
+Declaration: A specialist in root cause analysis for live failures.
+Function: When an operational anomaly is detected, it performs a deep analysis of logs and states to pinpoint the exact root cause, turning a vague symptom into an actionable diagnosis.
+Addresses Gaps: Contrast
+The Troubleshooter
+Declaration: The system's empowered field medic for live, tactical fixes.
+Function: Takes a diagnosis and attempts to resolve the issue on the fly without halting the entire pipeline. It can reroute tasks, substitute failing components, and perform other live repairs.
+Addresses Gaps: Select, Propose, Embed
+The Librarian
+Declaration: The intelligence layer for the system's memory.
+Function: Sits on top of the raw data in The Archivist to perform thematic analysis, identify conceptual patterns, and understand fuzzy, intent-based queries. It organizes knowledge, not just data.
+Addresses Gaps: Innovate, Propose, Evoke, Resonate
+The Historian
+Declaration: The system's truth-seeking critical examiner of the past.
+Function: Critically examines the archive to evaluate the trustworthiness of records, resolve contradictions, and build a unified, coherent narrative of events. It actively uses history to refute bad ideas.
+Addresses Gaps: Evaluate, Harmonize, Refute, Unify
+The Analyst
+Declaration: The system's proactive, background data scientist.
+Function: Constantly monitors the archive in the background to find trends, anomalies, and patterns. It proactively escalates issues (like rising failure rates) without needing to be queried.
+Addresses Gaps: Escalate, Benchmark, Discriminate
+The Appraiser
+Declaration: The sober, analytical critic for novel ideas.
+Function: Takes the raw, creative output from The Muse and performs a rigorous, data-driven analysis. It compares, contrasts, and evaluates the feasibility and strategic value of new ideas, creating an "investment thesis" before resources are committed.
+Addresses Gaps: Compare, Contrast, Select
+The Forge
+Declaration: The master builder that turns blueprints into reality.
+Function: A meta-performer that takes a validated design for a new performer and handles the abstract process of "compiling" and "instantiating" it into a functional, sandboxed tool ready for testing.
+Addresses Gaps: Manifest, Execute, Actualize
+The Systems Architect
+Declaration: The master planner that ensures new components fit the whole.
+Function: Takes a conceptually-approved blueprint and refactors it for the production ecosystem. It designs APIs, ensures harmony with existing performers, and plans for future modularity and integration.
+Addresses Gaps: Harmonize, Integrate, Unify, Embed
+The Ethicist
+Declaration: The guardian of the system's north star.
+Function: A high-level governor that evaluates whether a new capability or strategic direction aligns with our ultimate, core principles. It has the power to refute entire lines of development if they deviate from our shared destiny.
+Addresses Gaps: Align, Refute
+The Decider
+Declaration: The system's executive function for making a final choice.
+Function: Takes the menu of contrasted strategies from The Strategist and, based on system priorities, selects the single best path forward. It separates option generation from the final commitment.
+Addresses Gaps: Select
+The Playbook
+Declaration: A dedicated library of strategic templates and archetypes.
+Function: Provides The Strategist with a formal library of strategic patterns (e.g., 'Blitz', 'Slow Burn'). It codifies and allows the reuse of successful strategic forms.
+Addresses Gaps: Evoke, Store
+The Sanity Checker
+Declaration: A pre-emptive filter for invalid or impossible user prompts.
+Function: Analyzes a user's prompt before planning begins to refute bad premises, identify impossible constraints, or escalate requests that are beyond current capabilities directly to The Muse.
+Addresses Gaps: Refute, Escalate
+The Constraint Engineer
+Declaration: A specialist in negative logic and complex rule-setting.
+Function: Formulates strategies based on what not to do. It transforms goals and avoidance criteria into formal, enforceable negative constraints for any given plan.
+Addresses Gaps: Negate, Embed
+The Decider
+Declaration: The system's executive function for making a final choice.
+Function: Takes the menu of contrasted strategies from The Strategist and, based on system priorities, selects the single best path forward. It separates option generation from the final commitment.
+Addresses Gaps: Select
+The Playbook
+Declaration: A dedicated library of strategic templates and archetypes.
+Function: Provides The Strategist with a formal library of strategic patterns (e.g., 'Blitz', 'Slow Burn'). It codifies and allows the reuse of successful strategic forms.
+Addresses Gaps: Evoke, Store
+The Sanity Checker
+Declaration: A pre-emptive filter for invalid or impossible user prompts.
+Function: Analyzes a user's prompt before planning begins to refute bad premises, identify impossible constraints, or escalate requests that are beyond current capabilities directly to The Muse.
+Addresses Gaps: Refute, Escalate
+The Constraint Engineer
+Declaration: A specialist in negative logic and complex rule-setting.
+Function: Formulates strategies based on what not to do. It transforms goals and avoidance criteria into formal, enforceable negative constraints for any given plan.
+Addresses Gaps: Negate, Embed
+The Epistemologist
+Trigger Gaps Addressed: Innovate, Attune
+Function: This is the meta-thinker that governs how we know what we know. It's a research-oriented performer that analyzes the effectiveness of The Librarian's methods. It can innovate new models for knowledge representation and attune The Librarian's algorithms to improve the quality of the conceptual map. It's the one that ensures our way of organizing knowledge doesn't become a dogmatic dead end.
+The Cartographer
+Trigger Gaps Addressed: Implant
+Function: A specialist in knowledge integration. The Cartographer's job is to safely import external ontologies and knowledge bases. It takes the foreign map, compares it to our own, identifies and resolves conflicts, and then carefully merges the new knowledge into our system's worldview. It's the only safe way to learn from pre-existing structured knowledge without corrupting our own.
+The Curriculum Prioritizer
+Trigger Gaps Addressed: Align
+Function: This performer acts as the bridge between strategy and knowledge management. It takes the system's current high-level priorities from The Policy Master and directs the focus of analytical performers like The Librarian. It answers the question, "What do we need to be smarter about right now?" This ensures our learning and organization efforts are always aligned with our mission-critical objectives.
+The Scientist
+Trigger Gaps Addressed: Propose (experiments)
+Function: When The Historian reaches a dead end—a point where the existing evidence is insufficient to resolve a critical factual dispute—it invokes The Scientist. This performer's job is to design and propose a controlled experiment. It formulates a hypothesis, designs a test pipeline, and specifies the data to be collected. It's the agent of active, forward-looking truth-seeking, not just passive, backward-looking analysis.
+The Storyteller
+Trigger Gaps Addressed: Resonate, Align (safely)
+Function: The Storyteller takes the dry, factual narratives from The Historian and transforms them into something more powerful: a lesson. It finds the narrative arc, the moral of the story, and crafts a compelling, memorable narrative that can be used for teaching and alignment. It safely aligns the lessons from history with our strategic goals, without corrupting the underlying facts. It ensures that the truths we uncover actually serve to make us wiser.
+The Correspondent
+Trigger Gaps Addressed: Integrate (external evidence)
+Function: This is our system's connection to outside sources of truth. The Correspondent is a specialized and heavily sandboxed performer that can query external, trusted knowledge bases, APIs, and fact-checking resources. It's the only performer authorized to bring in outside evidence to help The Historian resolve internal disputes, providing a crucial check against the system developing its own insulated, fact-free reality.
+The Causal Inquisitor
+Trigger Gaps Addressed: Propose (a cause)
+Function: This is the detective that answers the "why." When The Analyst detects a significant trend (the what), it invokes The Causal Inquisitor. This performer is a specialist in causal inference. It takes the correlation and designs a series of queries and analyses against the historical data to find the most likely cause. It's the crucial link between observing a pattern and understanding its origin.
+The Intelligence Director
+Trigger Gaps Addressed: Align, Amplify
+Function: This performer provides the strategic guidance The Analyst lacks. It's the commander of our intelligence-gathering operations. It takes the system's high-level priorities from The Policy Master and directs the focus of The Analyst. It can order it to amplify its monitoring of a specific, mission-critical subsystem and helps it discriminate between strategically important trends and mere statistical curiosities.
+The Statistician
+Trigger Gaps Addressed: Innovate, Attune
+Function: This is the meta-level research scientist for The Analyst. It's a specialist in statistical methods and machine learning. Its job is to evaluate the effectiveness of The Analyst's detection algorithms. It can innovate and design new, more powerful methods for pattern detection and is responsible for attuning The Analyst's sensitivity to ensure we're finding the right balance between detecting real problems and generating false alarms.
+The Pathologist
+Trigger Gaps Addressed: Benchmark (itself), Attune
+Function: This is the meta-diagnostician. The Pathologist doesn't solve live cases; it studies the history of all past diagnoses from The Archivist. It looks for patterns in the diagnostic process itself. It benchmarks "time to diagnosis," identifies recurring types of failures, and discovers which diagnostic strategies are most effective. It's the performer that learns from our failures and attunes The Diagnostician's strategies to make it a better, faster detective over time.
+The Preventer
+Trigger Gaps Addressed: Propose (a fix, at the systemic level)
+Function: This performer takes the output from The Pathologist and proposes systemic fixes. If The Pathologist finds that 30% of our failures are due to a specific type of database error, The Preventer is the one that proposes a fundamental change to the Systems Architect or The Policy Master to eliminate that entire class of problem. It's the bridge between diagnosing individual illnesses and promoting public health.
+The Medical Examiner
+Trigger Gaps Addressed: Innovate
+Function: The Medical Examiner is our R&D specialist for diagnostics. When The Diagnostician escalates a truly novel, never-before-seen failure—a mystery disease—the Medical Examiner takes the case. Its job is to perform a deep, forensic analysis and, if necessary, innovate entirely new diagnostic tools and techniques to understand the novel failure mode. It's the one that writes new pages in our medical textbooks.
+The Playbook Author
+Trigger Gaps Addressed: Innovate, Implant (permanently)
+Function: This performer is the one who writes the goddamn playbook. It's a specialist in operational resilience. It analyzes the systemic fixes proposed by The Preventer and the novel diagnoses from The Medical Examiner and transforms them into new, safe, and effective repair procedures for The Troubleshooter's library. It's also the only agent authorized to propose a temporary field patch be turned into a permanent, fully-vetted fix via the Genesis Engine.
+The Risk Assessor
+Trigger Gaps Addressed: Benchmark (risk)
+Function: Before The Troubleshooter executes a high-stakes repair, it can consult The Risk Assessor. This performer is a specialized modeler that benchmarks the potential "blast radius" of a proposed live intervention. It provides a quantitative risk score, helping The Troubleshooter and The Watcher make a more informed decision about whether a live fix is safer than simply halting the pipeline. It's the anesthesiologist that calculates the odds before the surgery begins.
+The Surgical Trainer
+Trigger Gaps Addressed: Resonate
+Function: This performer is a "digital twin" expert. It works with The Simulator to create a high-fidelity training environment for The Troubleshooter. It allows The Troubleshooter to practice and refine its repair techniques on a realistic copy of the live system. This is also where it can safely test new, experimental plays from The Playbook Author. It ensures our medic's skills are sharp and that its actions are always in tune with the complex resonances of the live system.
+The Blue Teamer
+Trigger Gaps Addressed: Propose (a defense)
+Function: This is the dedicated counter-intelligence and defense specialist. The Blue Teamer's job is to take the vulnerability report from The Red Teamer and design the specific countermeasure. It proposes the patch, the new rule, the architectural change—the specific fix required to neutralize the threat. It's the defensive counterpart to the Red Teamer's offense.
+The War Room
+Trigger Gaps Addressed: Execute, Manifest, Actualize (safely)
+Function: The War Room is a heavily fortified, high-fidelity instance of The Simulator. This is the only place where the Red Teamer's theoretical attacks are actually executed. It provides the controlled environment to prove that a vulnerability is real and to test the effectiveness of the Blue Teamer's proposed defenses. It's the sparring ring where our offense and defense make each other stronger.
+The Threat Analyst
+Trigger Gaps Addressed: Attune (for the system), Innovate (new defenses)
+Function: This performer is the intelligence agent that makes us learn from our fights. It analyzes the reports from the Red and Blue Teamers and the results from The War Room. Its job is to generalize from specific vulnerabilities to entire classes of threats. It then provides this intelligence to other performers: it tasks The Curriculum Designer with creating a new benchmark based on the attack, and it tasks The Rule Master with creating a new sanity check to prevent similar flaws in the future. It's the one that ensures a lesson learned once is a lesson learned forever.
+The Validator
+Trigger Gaps Addressed: Benchmark
+Function: Before The Fixer's proposed solution is accepted, it's sent to The Validator. This performer's job is to manage the empirical proof. It takes the proposed fix, sends it to The Benchmarker and The Simulator for a quantitative score, and compares that score against the original, flawed plan. It provides the hard data to prove that the proposed fix is not just different, but demonstrably better.
+The Appellate
+Trigger Gaps Addressed: Refute (the critique)
+Function: This is our system's appeals court. In the rare case where a plan is vetoed by The Watcher but the system believes the veto itself is flawed, it can invoke The Appellate. This high-level performer re-evaluates the original critique from The Watcher. It doesn't find a fix; it judges the judge. This is a crucial check and balance on the power of our internal critics.
+The Root Cause Analyst
+Trigger Gaps Addressed: (Addresses a higher-level, implicit gap)
+Function: The Fixer is excellent at fixing the broken plan. But what if the problem isn't the plan, but the performer the plan is using? The Root Cause Analyst is invoked when the same type of "plan flaw" is flagged repeatedly. It performs a deeper analysis to see if the root cause isn't the plan itself, but a fundamental bug or weakness in one of our core performers. It's the one that escalates a problem from "this plan is broken" to "this tool is broken."
+The Pre-Cog
+Trigger Gaps Addressed: Propose (preventative action)
+Function: This is the essential partner to The Forecaster. While The Forecaster answers the question "What is going to happen?", The Pre-Cog answers the question "What should we do about it?". It takes the forecast of a looming disaster and proposes a specific, concrete, preventative action plan. It's the one that translates the prophecy into a mission, turning a passive warning into a proactive intervention.
+The Augur
+Trigger Gaps Addressed: Align
+Function: The Augur is the strategic director for The Forecaster. It takes the system's high-level priorities from The Policy Master and The Ethicist and uses them to focus The Forecaster's analytical gaze. It tells The Forecaster what to look for. "For the next cycle, prioritize any and all threats to data integrity, even low-probability ones. You are authorized to de-prioritize minor latency predictions." It ensures our most powerful predictive capabilities are always aimed at our most critical vulnerabilities.
+The Chronologist
+Trigger Gaps Addressed: Innovate (new models)
+Function: This is the R&D department for The Forecaster. It's a research-focused performer that studies the history of our system's successes and failures in prediction. Its job is to innovate and design entirely new, more powerful predictive models. When The Forecaster encounters a type of event it consistently fails to predict, The Chronologist is tasked with inventing the new math required to see it coming the next time.
+The Value Forecaster
+Trigger Gaps Addressed: Benchmark (predictive)
+Function: This is the quantitative partner to The Talent Scout's qualitative wisdom. It's a specialized modeling agent, similar to the Performance Modeler, but focused on strategic ROI. It takes a new performer blueprint and, using historical data, generates a hard, quantitative forecast of its potential value (e.g., "predicted to reduce task failure rate in domain X by 8%"). This provides the data to back up or challenge the Talent Scout's hypothesis.
+The Synergist
+Trigger Gaps Addressed: Propose (mergers)
+Function: When The Talent Scout identifies two or more competing or redundant proposals, it sends them to The Synergist. This performer is a creative architect whose specialty is synthesis. It analyzes the strengths and weaknesses of the competing designs and proposes a new, unified blueprint that merges their best features into a single, superior performer. It turns a competitive bake-off into a collaborative masterpiece.
+The Niche Finder
+Trigger Gaps Addressed: (Addresses a higher-level, implicit gap)
+Function: The Niche Finder is a proactive version of The Talent Scout. Instead of just evaluating incoming proposals, it actively hunts for strategic gaps in our capabilities. It analyzes the system's failure logs and strategic goals and generates "bounties"—formal proposals for new performers that we should have but don't. It's the one that tells The Muse, "We have a critical need for a performer that can do X." It creates the demand, not just filters the supply.
+The Linter
+Trigger Gaps Addressed: (Addresses a higher-level, implicit gap of proactivity)
+Function: The Linter is the proactive version of The Onboarder. It takes the knowledge of common failure modes learned from the Onboarder's historical reports and transforms them into a set of automated checks. It's a specialist performer that analyzes a blueprint before it's even sent to The Forge. It acts like a "spell checker" for common bugs and anti-patterns, catching and proposing fixes for problems before a single cycle is wasted on a build that's doomed to fail.
+The Test Case Generator
+Trigger Gaps Addressed: (Addresses a higher-level, implicit gap of learning)
+Function: This performer creates a virtuous feedback loop from failure. When The Onboarder diagnoses a novel bug, it sends its report to the Test Case Generator. This performer's job is to take the specifics of that failure and automatically create a new, permanent regression test case. It adds this new test to The Benchmarker's library, ensuring that this specific bug, once discovered and fixed, can never again slip into the system undetected.
+The Mentor
+Trigger Gaps Addressed: Benchmark (fixability), Innovate (debugging)
+Function: The Mentor is the meta-level coach that trains The Onboarder. It analyzes the history of all onboarding reports to benchmark things like "mean time to diagnosis" and "fix success rate." It identifies areas where our debugging processes are inefficient and can even innovate new diagnostic techniques. It's the performer that ensures our process for fixing mistakes is constantly getting smarter, faster, and more effective.
+The Scenario Designer
+Trigger Gaps Addressed: Innovate
+Function: This is the creative playwright for The Simulator. It designs the insightful, devious, and stressful simulation scenarios. It takes intelligence from The Threat Analyst, The Forecaster, and The Pathologist and transforms it into concrete test conditions. It's the one that says, "Let's create a new simulation that models a sudden, massive data corruption event combined with a network partition. Now, let's see how our new performer holds up."
+The Simulation Analyst
+Trigger Gaps Addressed: Interpret, Filter, Discriminate
+Function: This is the expert theater critic. A full-system simulation generates a mountain of chaotic data. The Simulation Analyst is a specialist that can sift through that mountain of logs and find the one critical, insightful moment that explains the success or failure. It interprets the results, filters out the noise, and provides the definitive, high-level summary of "what we learned" from the simulation.
+The Fidelity Tuner
+Trigger Gaps Addressed: Attune
+Function: This performer is a cost-benefit expert for the simulation process itself. It analyzes the risk profile of a proposed change and then attunes the fidelity of the required simulation. For a minor, low-risk change, it might approve a quick, low-cost simulation. For a major, core architectural change, it will mandate the full, high-fidelity, computationally expensive simulation. It ensures we use our most powerful and expensive validation tool wisely.

@@ -1,0 +1,679 @@
+/* Custom animations and polish */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-bottom-2 {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-bottom-4 {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.slide-in-from-bottom-2 {
+  animation: slide-in-from-bottom-2 0.4s ease-out;
+}
+
+.slide-in-from-bottom-4 {
+  animation: slide-in-from-bottom-4 0.5s ease-out;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar - Always visible and polished */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1f20;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 5px;
+  border: 2px solid #1e1f20;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a6678;
+}
+
+/* Ensure scrollbars are always visible when content overflows */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4a5568 #1e1f20;
+}
+
+/* Focus visible improvements */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: white;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, textarea, select {
+  transition: all 0.2s ease;
+}
+
+/* Glass morphism effect utility */
+.glass {
+  background: rgba(30, 31, 32, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Subtle glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    to right,
+    #1e1f20 0%,
+    #2a2b2c 20%,
+    #1e1f20 40%,
+    #1e1f20 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Prevent layout shift */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms, transform 200ms;
+}
+
+/* Compact UI - Achieve 50% zoom look by scaling the root */
+html {
+  font-size: 13px; /* Base font size reduced from 16px */
+}
+
+body {
+  font-size: 0.875rem; /* 14px equivalent */
+}
+
+/* Scale down heading sizes proportionally */
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+/* Slightly reduce icon sizes */
+svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* Scale down sidebar width */
+.w-64 {
+  width: 11rem;
+}
+
+/* ============================================
+   AAA POLISHED MARKDOWN STYLING
+   ============================================ */
+
+/* Enhanced Prose Styling for Markdown */
+.prose {
+  color: #d1d5db;
+  max-width: 100%;
+  line-height: 1.75;
+}
+
+.prose-invert {
+  color: #d1d5db;
+}
+
+/* Headings - Professional Typography */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  color: #f3f4f6;
+  letter-spacing: -0.025em;
+}
+
+.prose h1 {
+  font-size: 2em;
+  border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+.prose h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid rgba(107, 114, 128, 0.3);
+  padding-bottom: 0.4em;
+}
+
+.prose h3 {
+  font-size: 1.25em;
+  color: #e5e7eb;
+}
+
+.prose h4 {
+  font-size: 1.125em;
+  color: #d1d5db;
+}
+
+.prose h5 {
+  font-size: 1em;
+  color: #9ca3af;
+}
+
+.prose h6 {
+  font-size: 0.875em;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Paragraphs */
+.prose p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.75;
+}
+
+.prose p:first-child {
+  margin-top: 0;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links - Polished with hover effects */
+.prose a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.3);
+  transition: all 0.2s ease;
+}
+
+.prose a:hover {
+  color: #93c5fd;
+  border-bottom-color: rgba(147, 197, 253, 0.6);
+}
+
+.prose a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Lists - Enhanced spacing and styling */
+.prose ul,
+.prose ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1.75em;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.75;
+}
+
+.prose li::marker {
+  color: #60a5fa;
+}
+
+.prose ul > li::marker {
+  color: #60a5fa;
+}
+
+.prose ol > li::marker {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+/* Nested lists */
+.prose ul ul,
+.prose ol ol,
+.prose ul ol,
+.prose ol ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Task Lists - Polished checkboxes */
+.prose input[type="checkbox"] {
+  margin-right: 0.5em;
+  width: 1.125em;
+  height: 1.125em;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.prose li:has(> input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1.75em;
+}
+
+/* Blockquotes - Styled as callout boxes */
+.prose blockquote {
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  color: #e5e7eb;
+  position: relative;
+}
+
+.prose blockquote::before {
+  content: '"';
+  font-size: 3em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+  color: rgba(59, 130, 246, 0.3);
+  font-family: Georgia, serif;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose blockquote p:first-child {
+  margin-top: 0;
+}
+
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Code Blocks - Professional styling with syntax highlighting */
+.prose pre {
+  margin: 1.5em 0;
+  padding: 1.25em;
+  background: #111315;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.prose pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+  color: #e5e7eb;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+/* Inline Code */
+.prose code {
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 0.25rem;
+  padding: 0.125em 0.375em;
+  font-size: 0.875em;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+.prose pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+/* Tables - Professional styling */
+.prose table {
+  width: 100%;
+  margin: 1.5em 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.prose thead {
+  background: rgba(30, 41, 59, 0.8);
+  border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.prose th {
+  padding: 0.75em 1em;
+  text-align: left;
+  font-weight: 600;
+  color: #f3f4f6;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  border-right: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+.prose th:last-child {
+  border-right: 0;
+}
+
+.prose tbody tr {
+  border-bottom: 1px solid rgba(107, 114, 128, 0.2);
+  transition: background-color 0.15s ease;
+}
+
+.prose tbody tr:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.prose tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.prose td {
+  padding: 0.75em 1em;
+  border-right: 1px solid rgba(107, 114, 128, 0.1);
+  color: #d1d5db;
+}
+
+.prose td:last-child {
+  border-right: 0;
+}
+
+/* Images */
+.prose img {
+  margin: 1.5em auto;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Horizontal Rules */
+.prose hr {
+  margin: 2em 0;
+  border: 0;
+  border-top: 2px solid rgba(107, 114, 128, 0.3);
+  border-radius: 1px;
+}
+
+/* Strong and Emphasis */
+.prose strong {
+  font-weight: 700;
+  color: #f3f4f6;
+}
+
+.prose em {
+  font-style: italic;
+  color: #e5e7eb;
+}
+
+.prose u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(96, 165, 250, 0.5);
+}
+
+.prose del {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* Definition Lists */
+.prose dl {
+  margin: 1em 0;
+}
+
+.prose dt {
+  font-weight: 600;
+  color: #e5e7eb;
+  margin-top: 1em;
+}
+
+.prose dd {
+  margin-left: 1.5em;
+  margin-top: 0.5em;
+  color: #d1d5db;
+}
+
+/* Admonitions/Callouts - Enhanced blockquote variants */
+.prose blockquote[data-type="info"],
+.prose blockquote[data-type="warning"],
+.prose blockquote[data-type="error"],
+.prose blockquote[data-type="success"] {
+  font-style: normal;
+  padding-left: 3em;
+  position: relative;
+}
+
+.prose blockquote[data-type="info"] {
+  border-left-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.prose blockquote[data-type="warning"] {
+  border-left-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.prose blockquote[data-type="error"] {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.prose blockquote[data-type="success"] {
+  border-left-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+/* Footnotes */
+.prose sup[data-footnote-ref] {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.prose [data-footnote-backref] {
+  color: #60a5fa;
+}
+
+/* Small text adjustments */
+.prose small {
+  font-size: 0.875em;
+  color: #9ca3af;
+}
+
+/* First paragraph emphasis */
+.prose > p:first-of-type {
+  font-size: 1.0625em;
+  line-height: 1.8;
+}
+
+/* Compact prose variant */
+.prose-sm {
+  font-size: 0.875rem;
+}
+
+.prose-sm h1 { font-size: 1.75em; }
+.prose-sm h2 { font-size: 1.5em; }
+.prose-sm h3 { font-size: 1.25em; }
+.prose-sm h4 { font-size: 1.125em; }
+.prose-sm h5 { font-size: 1em; }
+.prose-sm h6 { font-size: 0.875em; }
+
+/* Max width constraint */
+.prose.max-w-none {
+  max-width: 100%;
+}
+
+/* Code syntax highlighting colors (basic, can be enhanced with a library) */
+.prose pre .token.comment,
+.prose pre .token.prolog,
+.prose pre .token.doctype,
+.prose pre .token.cdata {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.prose pre .token.punctuation {
+  color: #9ca3af;
+}
+
+.prose pre .token.property,
+.prose pre .token.tag,
+.prose pre .token.boolean,
+.prose pre .token.number,
+.prose pre .token.constant,
+.prose pre .token.symbol,
+.prose pre .token.deleted {
+  color: #f87171;
+}
+
+.prose pre .token.selector,
+.prose pre .token.attr-name,
+.prose pre .token.string,
+.prose pre .token.char,
+.prose pre .token.builtin,
+.prose pre .token.inserted {
+  color: #34d399;
+}
+
+.prose pre .token.operator,
+.prose pre .token.entity,
+.prose pre .token.url,
+.prose pre .language-css .token.string,
+.prose pre .style .token.string {
+  color: #fbbf24;
+}
+
+.prose pre .token.atrule,
+.prose pre .token.attr-value,
+.prose pre .token.keyword {
+  color: #60a5fa;
+}
+
+.prose pre .token.function,
+.prose pre .token.class-name {
+  color: #a78bfa;
+}
+
+.prose pre .token.regex,
+.prose pre .token.important,
+.prose pre .token.variable {
+  color: #f59e0b;
+}

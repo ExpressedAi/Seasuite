@@ -1,0 +1,5 @@
+{
+  "name": "JIT Memory Agent",
+  "description": "An agentic chat application featuring a Just-in-Time (JIT) memory system. The agent saves important information from conversations with relevant tags to an IndexedDB database, allowing it to recall context in future interactions.",
+  "requestFramePermissions": []
+}
