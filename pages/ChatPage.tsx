@@ -1208,8 +1208,8 @@ const ChatPage: React.FC = () => {
                 </div>
             )}
             <div className="flex-1 overflow-y-auto min-h-0">
-                <div className="sticky top-0 z-10 bg-[#26282B] border-b border-gray-700/50 px-6 py-4">
-                    <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="sticky top-0 z-10 bg-[#26282B] border-b border-gray-700/50 px-3 md:px-6 py-3 md:py-4">
+                    <div className="flex flex-wrap items-center justify-between gap-2 md:gap-3">
                         <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-widest text-gray-500">
                             <span>Thread Controls</span>
                             {activeThreadMeta && (
@@ -1232,47 +1232,54 @@ const ChatPage: React.FC = () => {
                                 </span>
                             )}
                         </div>
-                        <div className="relative flex flex-wrap items-center gap-2">
+                        <div className="relative flex flex-wrap items-center gap-1.5 md:gap-2">
                             <button
                                 onClick={() => setIsMissionSidebarOpen(prev => !prev)}
-                                className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+                                className={`rounded-lg px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm font-semibold transition-colors ${
                                     missionSummary && missionCount > 0
                                         ? 'bg-blue-600/80 text-white hover:bg-blue-600'
                                         : 'bg-gray-800 hover:bg-gray-700 text-gray-200'
                                 }`}
                             >
-                                Missions{missionSummary ? ` (${missionCount})` : ''}
+                                <span className="hidden sm:inline">Missions</span>
+                                <span className="sm:hidden">M</span>
+                                {missionSummary && missionCount > 0 ? ` (${missionCount})` : ''}
                             </button>
                             <button
                                 onClick={() => setIsIntelligenceFeedOpen(prev => !prev)}
-                                className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+                                className={`rounded-lg px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm font-semibold transition-colors ${
                                     intelligenceCount > 0
                                         ? 'bg-purple-600/80 text-white hover:bg-purple-600'
                                         : 'bg-gray-800 hover:bg-gray-700 text-gray-200'
                                 }`}
                             >
-                                Intel{intelligenceCount > 0 ? ` (${intelligenceCount})` : ''}
+                                <span className="hidden sm:inline">Intel</span>
+                                <span className="sm:hidden">I</span>
+                                {intelligenceCount > 0 ? ` (${intelligenceCount})` : ''}
                             </button>
                             <button
                                 onClick={() => setIsFollowUpPanelOpen(prev => !prev)}
-                                className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+                                className={`rounded-lg px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm font-semibold transition-colors ${
                                     activeFollowUps > 0
                                         ? 'bg-amber-600/80 text-white hover:bg-amber-600'
                                         : 'bg-gray-800 hover:bg-gray-700 text-gray-200'
                                 }`}
                             >
-                                Follow-Ups{activeFollowUps > 0 ? ` (${activeFollowUps})` : ''}
+                                <span className="hidden sm:inline">Follow-Ups</span>
+                                <span className="sm:hidden">F</span>
+                                {activeFollowUps > 0 ? ` (${activeFollowUps})` : ''}
                             </button>
                             <button
                                 onClick={handleRefreshThread}
-                                className="px-3 py-2 rounded-md text-sm font-semibold transition-colors bg-gray-800 hover:bg-gray-700 text-gray-200"
+                                className="px-2 md:px-3 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-semibold transition-colors bg-gray-800 hover:bg-gray-700 text-gray-200"
                             >
-                                New Conversation
+                                <span className="hidden sm:inline">New Conversation</span>
+                                <span className="sm:hidden">New</span>
                             </button>
                             <button
                                 onClick={() => setIsContextPanelOpen(prev => !prev)}
                                 disabled={contextMemories.length === 0 && !isContextPanelOpen}
-                                className={`px-3 py-2 rounded-md text-sm font-semibold transition-colors ${
+                                className={`px-2 md:px-3 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-semibold transition-colors ${
                                     contextMemories.length === 0 && !isContextPanelOpen
                                         ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
                                         : isContextPanelOpen
@@ -1284,16 +1291,17 @@ const ChatPage: React.FC = () => {
                             </button>
                             <button
                                 onClick={handleToggleThreadPicker}
-                                className={`px-3 py-2 rounded-md text-sm font-semibold transition-colors ${
+                                className={`px-2 md:px-3 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-semibold transition-colors ${
                                     isThreadPickerOpen ? 'bg-purple-600 text-white' : 'bg-gray-800 hover:bg-gray-700 text-gray-200'
                                 }`}
                             >
-                                {isThreadPickerOpen ? 'Close Saved Threads' : 'Open Saved Threads'}
+                                <span className="hidden sm:inline">{isThreadPickerOpen ? 'Close Saved Threads' : 'Open Saved Threads'}</span>
+                                <span className="sm:hidden">Threads</span>
                             </button>
                             <button
                                 onClick={handleSaveConversation}
                                 disabled={isSavingThread || messages.length === 0}
-                                className={`px-4 py-2 rounded-md text-sm font-semibold transition-colors ${
+                                className={`px-2 md:px-4 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-semibold transition-colors ${
                                     messages.length === 0
                                         ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
                                         : 'bg-blue-600 hover:bg-blue-500 text-white'
@@ -1302,7 +1310,7 @@ const ChatPage: React.FC = () => {
                                 {isSavingThread ? 'Archiving…' : 'Archive Conversation'}
                             </button>
                             {isThreadPickerOpen && (
-                                <div className="absolute right-0 top-full mt-2 w-96 max-h-80 overflow-y-auto bg-[#1b1d1f] border border-gray-700 rounded-lg shadow-xl p-3">
+                                <div className="absolute right-0 top-full mt-2 w-[calc(100vw-2rem)] sm:w-96 max-h-80 overflow-y-auto bg-[#1b1d1f] border border-gray-700 rounded-lg shadow-xl p-3">
                                     <div className="flex items-center justify-between mb-2">
                                         <h3 className="text-sm font-semibold text-gray-200">Saved Threads</h3>
                                         <button
@@ -1420,7 +1428,7 @@ const ChatPage: React.FC = () => {
                         </div>
                     </div>
                 ) : (
-                    <div className="space-y-4">
+                    <div className="space-y-3 md:space-y-4 px-2 md:px-0">
                         {messages.map((msg, index) => (
                             <div
                                 key={msg.id}

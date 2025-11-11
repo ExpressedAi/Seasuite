@@ -187,7 +187,7 @@ const MemoryOnboardingPage: React.FC = () => {
     };
 
     return (
-        <div className="p-8 flex flex-col gap-6 h-full">
+        <div className="p-3 md:p-8 flex flex-col gap-4 md:gap-6 h-full">
             <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
                     <h1 className="text-4xl font-bold text-gray-100">Memory Onboarding</h1>
@@ -206,8 +206,8 @@ const MemoryOnboardingPage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2 bg-[#1e1f20] border border-gray-700 rounded-lg p-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
+                <div className="lg:col-span-2 bg-[#1e1f20] border border-gray-700 rounded-lg p-3 md:p-6">
                     <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Source Text</label>
                     <div
                         onDrop={handleDrop}
@@ -226,7 +226,7 @@ const MemoryOnboardingPage: React.FC = () => {
                     <div className="mt-2 text-xs text-gray-500">Chunks prepared: {chunks.length}</div>
                 </div>
 
-                <div className="bg-[#1e1f20] border border-gray-700 rounded-lg p-6 space-y-4">
+                <div className="bg-[#1e1f20] border border-gray-700 rounded-lg p-3 md:p-6 space-y-4">
                     <div>
                         <label className="block text-xs uppercase tracking-wider text-gray-500 mb-1">Provider</label>
                         <select
@@ -267,7 +267,7 @@ const MemoryOnboardingPage: React.FC = () => {
                         </div>
                     )}
 
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
                             <label className="block text-xs uppercase tracking-wider text-gray-500 mb-1">Chunk Size (characters)</label>
                             <input
@@ -303,7 +303,7 @@ const MemoryOnboardingPage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="flex-1 bg-[#1e1f20] border border-gray-700 rounded-lg p-6 overflow-y-auto">
+            <div className="flex-1 bg-[#1e1f20] border border-gray-700 rounded-lg p-3 md:p-6 overflow-y-auto">
                 <h2 className="text-lg font-semibold text-gray-200 mb-4">Progress</h2>
                 {progress.length === 0 ? (
                     <p className="text-gray-500 text-sm">Queue memories to see real-time onboarding progress.</p>

@@ -228,8 +228,8 @@ const MemoryPage: React.FC = () => {
 
 
   return (
-    <div className="p-8 h-full flex flex-col overflow-y-auto">
-      <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
+    <div className="p-3 md:p-8 h-full flex flex-col overflow-y-auto">
+      <div className="flex flex-wrap justify-between items-center gap-4 mb-4 md:mb-8">
         <h1 className="text-4xl font-bold text-gray-200">Agent Memory</h1>
         <div className="flex items-center gap-3 text-sm text-gray-400">
             {statusMessage && <span className="text-blue-300">{statusMessage}</span>}
@@ -242,26 +242,26 @@ const MemoryPage: React.FC = () => {
               <button
                 onClick={handleBatchProcess}
                 disabled={isBatchProcessing}
-                className="flex items-center gap-2 px-4 py-2 rounded-md border border-purple-600/50 text-purple-200 bg-purple-900/20 hover:bg-purple-900/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                className="flex items-center gap-2 px-2 md:px-4 py-1.5 md:py-2 text-xs md:text-sm rounded-md border border-purple-600/50 text-purple-200 bg-purple-900/20 hover:bg-purple-900/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
               >
                 {isBatchProcessing ? 'Processing...' : `Batch Process (${selectedMemoryIds.size})`}
               </button>
             )}
             <button
                 onClick={handleSelectAll}
-                className="flex items-center gap-2 px-3 py-2 rounded-md border border-gray-600 bg-[#1e1f20] text-gray-300 hover:bg-gray-700"
+                className="flex items-center gap-2 px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm rounded-md border border-gray-600 bg-[#1e1f20] text-gray-300 hover:bg-gray-700"
             >
                 {selectedMemoryIds.size === filteredAndSortedMemories.length ? 'Deselect All' : 'Select All'}
             </button>
             <button
                 onClick={refreshMemories}
-                className="flex items-center gap-2 px-3 py-2 rounded-md border border-gray-600 bg-[#1e1f20] text-gray-300 hover:bg-gray-700"
+                className="flex items-center gap-2 px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm rounded-md border border-gray-600 bg-[#1e1f20] text-gray-300 hover:bg-gray-700"
             >
                 <RefreshIcon className="h-4 w-4" /> Refresh
             </button>
             <button
                 onClick={handleClearMemories}
-                className="flex items-center gap-2 px-3 py-2 rounded-md border border-red-600/50 text-red-200 bg-red-900/20 hover:bg-red-900/40"
+                className="flex items-center gap-2 px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm rounded-md border border-red-600/50 text-red-200 bg-red-900/20 hover:bg-red-900/40"
             >
                 <TrashIcon className="h-4 w-4" /> Clear All
             </button>
@@ -287,7 +287,7 @@ const MemoryPage: React.FC = () => {
       </div>
 
       {isLoading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {Array.from({ length: 6 }).map((_, i) => (
             <CardSkeleton key={i} />
           ))}
@@ -307,7 +307,7 @@ const MemoryPage: React.FC = () => {
             )}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {filteredAndSortedMemories.map((memory, index) => (
             <div
               key={memory.id}

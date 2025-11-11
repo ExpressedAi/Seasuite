@@ -203,9 +203,9 @@ const ClientProfilesPage: React.FC = () => {
   );
 
   return (
-    <div className="h-full bg-[#26282B] text-white flex">
+    <div className="h-full bg-[#26282B] text-white flex flex-col md:flex-row">
       {/* Sidebar */}
-      <div className="w-80 bg-[#1E1F22] border-r border-gray-900 flex flex-col">
+      <div className="w-full md:w-80 bg-[#1E1F22] border-b md:border-r md:border-b-0 border-gray-900 flex flex-col">
         <div className="border-b border-gray-900 p-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Client Roster</h2>
@@ -273,7 +273,7 @@ const ClientProfilesPage: React.FC = () => {
       {/* Main Content */}
       <div className="flex-1 overflow-y-auto">
         {selectedId || editing ? (
-          <div className="mx-auto max-w-5xl space-y-8 p-8">
+          <div className="mx-auto max-w-5xl space-y-4 md:space-y-8 p-3 md:p-8">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
               <div className="space-y-2">
                 <div className="flex flex-wrap items-center gap-3">
@@ -331,7 +331,7 @@ const ClientProfilesPage: React.FC = () => {
             </div>
 
             {!editing && (
-              <div className="grid gap-4 rounded-2xl border border-gray-900 bg-[#1A1C1E] p-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-4 rounded-2xl border border-gray-900 bg-[#1A1C1E] p-3 md:p-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 {renderSummaryChip('Primary Goal', activeProfile?.goals)}
                 {renderSummaryChip('Biggest Friction', activeProfile?.painPoints)}
                 {renderSummaryChip('Buying Power', activeProfile?.budget)}
@@ -339,11 +339,11 @@ const ClientProfilesPage: React.FC = () => {
               </div>
             )}
 
-            <div className="space-y-8">
-              <section className="rounded-2xl border border-gray-900 bg-[#15171B] p-6">
+            <div className="space-y-4 md:space-y-8">
+              <section className="rounded-2xl border border-gray-900 bg-[#15171B] p-3 md:p-6">
                 <h2 className="text-lg font-semibold text-blue-300">Identity</h2>
-                <p className="text-sm text-gray-500">Baseline firmographic data and who we’re interfacing with.</p>
-                <div className="mt-6 grid gap-5 md:grid-cols-2">
+                <p className="text-sm text-gray-500">Baseline firmographic data and who we're interfacing with.</p>
+                <div className="mt-4 md:mt-6 grid gap-5 grid-cols-1 md:grid-cols-2">
                   <Field label="Name" field="name" />
                   <Field label="Company" field="company" />
                   <Field label="Industry" field="industry" />
@@ -351,7 +351,7 @@ const ClientProfilesPage: React.FC = () => {
                 </div>
               </section>
 
-              <section className="rounded-2xl border border-gray-900 bg-[#15171B] p-6">
+              <section className="rounded-2xl border border-gray-900 bg-[#15171B] p-3 md:p-6">
                 <h2 className="text-lg font-semibold text-blue-300">Business Intel</h2>
                 <p className="text-sm text-gray-500">Why they buy, what success looks like, and the plays that work.</p>
                 <div className="mt-6 grid gap-5">
@@ -362,17 +362,17 @@ const ClientProfilesPage: React.FC = () => {
                 </div>
               </section>
 
-              <section className="rounded-2xl border border-gray-900 bg-[#15171B] p-6">
+              <section className="rounded-2xl border border-gray-900 bg-[#15171B] p-3 md:p-6">
                 <h2 className="text-lg font-semibold text-blue-300">Psychology</h2>
                 <p className="text-sm text-gray-500">Social dynamics and emotional levers to personalize outreach.</p>
-                <div className="mt-6 grid gap-5 md:grid-cols-2">
+                <div className="mt-4 md:mt-6 grid gap-5 grid-cols-1 md:grid-cols-2">
                   <Field label="Personality & Motivations" field="personality" multiline />
                   <Field label="Communication Style" field="communicationStyle" multiline />
                   <Field label="Common Objections" field="objections" multiline />
                 </div>
               </section>
 
-              <section className="rounded-2xl border border-gray-900 bg-[#15171B] p-6">
+              <section className="rounded-2xl border border-gray-900 bg-[#15171B] p-3 md:p-6">
                 <h2 className="text-lg font-semibold text-blue-300">Moves & History</h2>
                 <p className="text-sm text-gray-500">Notes to guide future engagements, campaigns, or upsell motions.</p>
                 <div className="mt-6 grid gap-5">

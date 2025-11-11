@@ -213,7 +213,7 @@ const BrandIntelligencePage: React.FC = () => {
 
   return (
     <div className="h-full bg-[#26282B] text-white overflow-y-auto">
-      <div className="max-w-6xl mx-auto py-8 px-8">
+      <div className="max-w-6xl mx-auto py-4 md:py-8 px-3 md:px-8">
         <header className="mb-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-2">
             <div className="flex items-center gap-3">
@@ -251,7 +251,7 @@ const BrandIntelligencePage: React.FC = () => {
           </div>
         </header>
 
-        <section className="mb-10 grid gap-4 rounded-2xl border border-gray-900 bg-[#1E1F22] p-6 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="mb-6 md:mb-10 grid gap-3 md:gap-4 rounded-2xl border border-gray-900 bg-[#1E1F22] p-3 md:p-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-1">
             <div className="text-xs font-semibold uppercase tracking-wide text-gray-500">Coverage</div>
             <div className="text-2xl font-semibold">{filledStats.filled}/{filledStats.total}</div>
@@ -277,9 +277,9 @@ const BrandIntelligencePage: React.FC = () => {
           </div>
         </section>
 
-        <div className="space-y-10">
+        <div className="space-y-6 md:space-y-10">
           {FIELD_SECTIONS.map(section => (
-            <section key={section.title} className="rounded-2xl border border-gray-900 bg-[#1B1C1F] p-6">
+            <section key={section.title} className="rounded-2xl border border-gray-900 bg-[#1B1C1F] p-3 md:p-6">
               <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <h2 className="text-lg font-semibold text-blue-300">{section.title}</h2>
@@ -291,7 +291,7 @@ const BrandIntelligencePage: React.FC = () => {
                   </div>
                 )}
               </div>
-              <div className="grid gap-5 md:grid-cols-2">
+              <div className="grid gap-4 md:gap-5 grid-cols-1 md:grid-cols-2">
                 {section.fields.map(field => (
                   <Field key={field.key} label={field.label} field={field.key} multiline={field.multiline} />
                 ))}

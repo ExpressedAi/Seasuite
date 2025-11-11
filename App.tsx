@@ -40,10 +40,57 @@ const PageTransition: React.FC<{ children: React.ReactNode }> = ({ children }) =
 
 const AppContent: React.FC = () => {
     const { toasts, dismiss } = useToast();
+    const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
+    const location = useLocation();
+
+    // Close sidebar on route change (mobile)
+    React.useEffect(() => {
+        setIsSidebarOpen(false);
+    }, [location.pathname]);
+
+    // Close sidebar when clicking outside (mobile)
+    const sidebarRef = React.useRef<HTMLDivElement>(null);
+    React.useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (window.innerWidth < 768 && isSidebarOpen && sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+                setIsSidebarOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [isSidebarOpen]);
 
     return (
         <>
-            <Sidebar />
+            {/* Mobile Menu Button */}
+            <button
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                className="md:hidden fixed top-4 left-4 z-50 bg-[#202123] p-3 rounded-lg shadow-lg border border-gray-700 hover:bg-gray-700 transition-colors"
+                aria-label="Toggle menu"
+            >
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {isSidebarOpen ? (
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    ) : (
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    )}
+                </svg>
+            </button>
+
+            {/* Mobile Overlay */}
+            {isSidebarOpen && (
+                <div
+                    className="md:hidden fixed inset-0 bg-black/50 z-30"
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
+
+            {/* Sidebar */}
+            <div ref={sidebarRef}>
+                <Sidebar isOpen={isSidebarOpen} />
+            </div>
+
             <main className="flex-1 overflow-y-auto flex flex-col">
                 <PageTransition>
                     <Routes>

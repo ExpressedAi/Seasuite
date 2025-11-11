@@ -110,12 +110,12 @@ const SettingsPage: React.FC = () => {
   };
 
   return (
-    <div className="p-8 max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold text-gray-200 mb-8">Settings</h1>
+    <div className="p-3 md:p-8 max-w-full md:max-w-3xl mx-auto">
+      <h1 className="text-4xl font-bold text-gray-200 mb-4 md:mb-8">Settings</h1>
       
-      <div className="space-y-8">
+      <div className="space-y-4 md:space-y-8">
         {/* System Instruction Section */}
-        <div className="bg-[#1e1f20] p-6 rounded-lg border border-gray-700">
+        <div className="bg-[#1e1f20] p-3 md:p-6 rounded-lg border border-gray-700">
             <h3 className="text-lg font-semibold text-gray-200">
                 Custom System Instruction
             </h3>
@@ -130,7 +130,7 @@ const SettingsPage: React.FC = () => {
             />
             <button
                 onClick={handleSaveInstruction}
-                className="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                className="mt-4 px-3 md:px-4 py-1.5 md:py-2 text-sm md:text-base bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
             >
                 Save Instruction
             </button>
@@ -139,7 +139,7 @@ const SettingsPage: React.FC = () => {
             )}
         </div>
 
-        <div className="bg-[#1e1f20] p-6 rounded-lg border border-gray-700">
+        <div className="bg-[#1e1f20] p-3 md:p-6 rounded-lg border border-gray-700">
             <h3 className="text-lg font-semibold text-gray-200">
                 AI Provider Configuration
             </h3>
@@ -216,7 +216,7 @@ const SettingsPage: React.FC = () => {
                 })}
             </div>
 
-        <div className="bg-[#1e1f20] p-6 rounded-lg border border-gray-700">
+        <div className="bg-[#1e1f20] p-3 md:p-6 rounded-lg border border-gray-700">
             <h3 className="text-lg font-semibold text-gray-200">Transparency Controls</h3>
             <p className="text-sm text-gray-400 mt-1 mb-4">Choose which markdown callouts (admonitions) appear in the chat transcript when the agent responds.</p>
             <div className="space-y-3">
@@ -240,7 +240,7 @@ const SettingsPage: React.FC = () => {
             <button
 
                 onClick={handleSaveAiSettings}
-                className="mt-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                className="mt-6 px-3 md:px-4 py-1.5 md:py-2 text-sm md:text-base bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
             >
                 Save AI Settings
             </button>

@@ -161,9 +161,9 @@ const CalendarPage: React.FC = () => {
     }
 
     return (
-        <div className="p-8 flex flex-col h-full gap-6 bg-gradient-to-br from-[#0a0b0c] via-[#111315] to-[#0a0b0c]">
+        <div className="p-3 md:p-8 flex flex-col h-full gap-4 md:gap-6 bg-gradient-to-br from-[#0a0b0c] via-[#111315] to-[#0a0b0c]">
             {/* Header */}
-            <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 md:gap-4">
                 <div className="space-y-2">
                     <div className="flex items-center gap-3">
                         <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
@@ -261,9 +261,11 @@ const CalendarPage: React.FC = () => {
 
                     {/* Calendar Grid */}
                     <div className="grid grid-cols-7 gap-px bg-gray-700/50 border border-gray-700/50 rounded-lg overflow-hidden shadow-2xl">
-                        {weekDays.map(day => (
-                            <div key={day} className="text-center font-semibold text-xs text-gray-400 py-3 bg-gradient-to-b from-[#1e1f20] to-[#141517] border-b border-gray-700/50">
-                                {day}
+                        {/* Desktop: 7 columns, Mobile: Hide day headers and use simpler layout */}
+                        {weekDays.map((day, index) => (
+                            <div key={day} className="text-center font-semibold text-xs text-gray-400 py-2 md:py-3 bg-gradient-to-b from-[#1e1f20] to-[#141517] border-b border-gray-700/50">
+                                <span className="hidden sm:inline">{day}</span>
+                                <span className="sm:hidden">{day.charAt(0)}</span>
                             </div>
                         ))}
 
@@ -279,13 +281,13 @@ const CalendarPage: React.FC = () => {
                                 <div
                                     key={day.toString()}
                                     onClick={() => handleDateClick(day)}
-                                    className={`p-3 min-h-[120px] flex flex-col bg-gradient-to-br from-[#1e1f20] to-[#141517] hover:from-[#2a2b2c] hover:to-[#1e1f20] transition-all duration-200 cursor-pointer relative group border border-transparent hover:border-purple-500/30 ${
+                                    className={`p-1.5 md:p-3 min-h-[60px] md:min-h-[120px] flex flex-col bg-gradient-to-br from-[#1e1f20] to-[#141517] hover:from-[#2a2b2c] hover:to-[#1e1f20] transition-all duration-200 cursor-pointer relative group border border-transparent hover:border-purple-500/30 ${
                                         isCurrentMonth ? '' : 'opacity-40'
-                                    } ${isTodayDate ? 'ring-2 ring-blue-500/50 ring-offset-2 ring-offset-[#0a0b0c]' : ''}`}
+                                    } ${isTodayDate ? 'ring-1 md:ring-2 ring-blue-500/50 ring-offset-1 md:ring-offset-2 ring-offset-[#0a0b0c]' : ''}`}
                                 >
-                                    <span className={`font-semibold text-sm mb-2 ${
-                                        isTodayDate 
-                                            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg' 
+                                    <span className={`font-semibold text-xs md:text-sm mb-1 md:mb-2 ${
+                                        isTodayDate
+                                            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full w-6 h-6 md:w-8 md:h-8 flex items-center justify-center shadow-lg text-[10px] md:text-sm'
                                             : 'text-gray-300'
                                     }`}>
                                         {format(day, 'd')}

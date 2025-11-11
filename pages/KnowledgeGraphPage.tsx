@@ -232,7 +232,7 @@ ${selectedEntity ? `\n**Currently Exploring: ${selectedEntity.name}**\n\nThis en
     };
 
     return (
-        <div className="p-8 flex flex-col h-full gap-6 bg-gradient-to-br from-[#0a0b0c] via-[#111315] to-[#0a0b0c]">
+        <div className="p-3 md:p-8 flex flex-col h-full gap-4 md:gap-6 bg-gradient-to-br from-[#0a0b0c] via-[#111315] to-[#0a0b0c]">
             <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="space-y-2">
                     <div className="flex items-center gap-3">
@@ -331,7 +331,7 @@ ${selectedEntity ? `\n**Currently Exploring: ${selectedEntity.name}**\n\nThis en
                 </div>
             )}
 
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-8 min-h-0">
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 min-h-0">
                 {viewMode === 'graph' ? (
                     <div className="md:col-span-3 h-[600px] animate-in fade-in duration-300">
                         <KnowledgeGraphVisualization

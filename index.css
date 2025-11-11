@@ -175,8 +175,16 @@ img {
 }
 
 /* Compact UI - Achieve 50% zoom look by scaling the root */
+/* On mobile, use standard 16px for better readability and accessibility */
 html {
-  font-size: 13px; /* Base font size reduced from 16px */
+  font-size: 16px; /* Standard mobile font size */
+}
+
+/* Desktop: Compact UI */
+@media (min-width: 768px) {
+  html {
+    font-size: 13px; /* Base font size reduced from 16px on desktop */
+  }
 }
 
 body {
@@ -202,9 +210,48 @@ svg {
   height: 0.875rem;
 }
 
-/* Scale down sidebar width */
-.w-64 {
-  width: 11rem;
+/* Scale down sidebar width - only on desktop */
+@media (min-width: 768px) {
+  .w-64 {
+    width: 11rem;
+  }
+}
+
+/* Mobile-specific utilities */
+@media (max-width: 767px) {
+  /* Ensure minimum touch target size of 44px */
+  button, a, input[type="checkbox"], input[type="radio"], select {
+    min-height: 44px;
+  }
+
+  /* Reduce excessive padding on mobile */
+  .mobile-p-4 {
+    padding: 1rem;
+  }
+
+  .mobile-p-3 {
+    padding: 0.75rem;
+  }
+
+  .mobile-gap-3 {
+    gap: 0.75rem;
+  }
+
+  /* Full width on mobile */
+  .mobile-w-full {
+    width: 100%;
+  }
+
+  /* Hide on mobile */
+  .mobile-hidden {
+    display: none;
+  }
+
+  /* Smaller scrollbar on mobile */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
 }
 
 /* ============================================

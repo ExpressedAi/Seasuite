@@ -271,7 +271,7 @@ useEffect(() => {
 
   return (
     <div className="h-full overflow-y-auto bg-[#26282B] text-white" style={{ scrollbarWidth: 'thin' }}>
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 md:gap-6 px-3 md:px-6 py-4 md:py-8">
         <header className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <h1 className="text-3xl font-semibold tracking-tight">Social Operations</h1>
@@ -297,7 +297,7 @@ useEffect(() => {
           </div>
         </header>
 
-        <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <section className="grid grid-cols-1 gap-3 md:gap-4 md:grid-cols-3">
           <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3">
             <div className="text-xs uppercase tracking-widest text-red-200">Social Pressure</div>
             <div className="mt-2 flex items-baseline gap-2">
@@ -374,7 +374,7 @@ useEffect(() => {
               </Link>
             </div>
 
-            <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div className="mt-4 grid grid-cols-1 gap-3 md:gap-4 md:grid-cols-3">
               {TEAM_FOCUS_BRANCHES.map(branch => {
                 const branchMeta = SKILL_BRANCHES[branch];
                 const xp = branchXp[branch] ?? 0;
@@ -446,7 +446,7 @@ useEffect(() => {
               </span>
             </div>
           </div>
-          <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-3 md:gap-4 lg:grid-cols-2">
             <div className="rounded-lg border border-gray-800 bg-[#111315] p-4">
               <h3 className="text-sm font-semibold text-amber-200">Next Actions</h3>
               <p className="text-[11px] text-gray-500">Top priority follow-ups ordered by due time.</p>

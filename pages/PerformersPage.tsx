@@ -586,7 +586,7 @@ const PerformersPage: React.FC = () => {
     };
 
     return (
-        <div className="p-8 h-full flex flex-col gap-6 overflow-y-auto">
+        <div className="p-3 md:p-8 h-full flex flex-col gap-4 md:gap-6 overflow-y-auto">
             <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div>
                     <h1 className="text-4xl font-bold text-gray-100">Performers</h1>
@@ -594,19 +594,19 @@ const PerformersPage: React.FC = () => {
                         Spin up auxiliary personas with their own models, prompts, and memories. Toggle them in chat to add their perspective alongside Seasuite like a boardroom task force.
                     </p>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-400">
+                <div className="flex items-center gap-3 text-xs md:text-sm text-gray-400">
                     {status && <span className="text-blue-300">{status}</span>}
                     <button
                         onClick={handleCreateNew}
-                        className="px-3 py-2 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-100 border border-gray-600"
+                        className="px-2 md:px-3 py-1.5 md:py-2 text-xs md:text-sm rounded-md bg-gray-800 hover:bg-gray-700 text-gray-100 border border-gray-600"
                     >
                         New Performer
                     </button>
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-6 flex-1 min-h-0">
-                <div className="md:w-80 flex-shrink-0 bg-[#1e1f20] border border-gray-700 rounded-lg p-4 flex flex-col overflow-y-auto">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 flex-1 min-h-0">
+                <div className="md:w-80 flex-shrink-0 bg-[#1e1f20] border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col overflow-y-auto">
                     <div className="text-xs uppercase tracking-wider text-gray-500 mb-3">Roster</div>
                     <div className="flex-1 overflow-y-auto space-y-2 pr-1">
                         {performers.length === 0 ? (
@@ -642,9 +642,9 @@ const PerformersPage: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="flex-1 bg-[#1e1f20] border border-gray-700 rounded-lg p-6 overflow-y-auto">
+                <div className="flex-1 bg-[#1e1f20] border border-gray-700 rounded-lg p-3 md:p-6 overflow-y-auto">
                     {selectedPerformer && (
-                        <div className="mb-6 rounded-lg border border-gray-700 bg-[#16171b] p-5">
+                        <div className="mb-4 md:mb-6 rounded-lg border border-gray-700 bg-[#16171b] p-3 md:p-5">
                             <div className="flex flex-wrap items-center justify-between gap-3">
                                 <div>
                                     <h2 className="text-lg font-semibold text-gray-100">Persona Pulse</h2>
@@ -657,7 +657,7 @@ const PerformersPage: React.FC = () => {
                                     )}
                                 </div>
                             </div>
-                            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm text-gray-200">
+                            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 text-sm text-gray-200">
                                 <div className="rounded-md border border-gray-700 bg-[#1f2024] p-3">
                                     <div className="text-xs uppercase tracking-wider text-gray-500">Activity</div>
                                     <div className="mt-2 text-xl font-semibold text-gray-100">{totalInteractions}</div>
@@ -696,7 +696,7 @@ const PerformersPage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label className="block text-xs font-semibold text-gray-400 uppercase mb-1">Display Icon</label>
-                            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                                 {ICON_OPTIONS.map(({ id, label, Icon }) => (
                                     <button
                                         key={id}
@@ -922,11 +922,11 @@ const PerformersPage: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="mt-6 flex items-center gap-3">
+                    <div className="mt-4 md:mt-6 flex items-center gap-2 md:gap-3">
                         <button
                             onClick={handleSave}
                             disabled={isSaving}
-                            className={`px-4 py-2 rounded-md text-sm font-semibold transition-colors ${isSaving ? 'bg-blue-700 cursor-wait' : 'bg-blue-600 hover:bg-blue-500'} text-white`}
+                            className={`px-3 md:px-4 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-semibold transition-colors ${isSaving ? 'bg-blue-700 cursor-wait' : 'bg-blue-600 hover:bg-blue-500'} text-white`}
                         >
                             {isSaving ? 'Saving…' : 'Save Performer'}
                         </button>
@@ -938,7 +938,7 @@ const PerformersPage: React.FC = () => {
                                         handleDelete(performer);
                                     }
                                 }}
-                                className="px-4 py-2 rounded-md text-sm font-semibold transition-colors bg-red-600 hover:bg-red-500 text-white"
+                                className="px-3 md:px-4 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-semibold transition-colors bg-red-600 hover:bg-red-500 text-white"
                             >
                                 Delete
                             </button>

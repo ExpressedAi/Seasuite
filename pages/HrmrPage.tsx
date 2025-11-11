@@ -244,7 +244,7 @@ const HrmrPage: React.FC = () => {
     };
 
     return (
-        <div className="p-8 h-full flex flex-col gap-6 overflow-hidden">
+        <div className="p-3 md:p-8 h-full flex flex-col gap-4 md:gap-6 overflow-hidden">
             <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
                     <h1 className="text-4xl font-bold text-gray-100">HRMR Observatory</h1>
@@ -304,8 +304,8 @@ const HrmrPage: React.FC = () => {
 
             {/* Graded Corpus Tab */}
             {activeTab === 'corpus' && (
-                <div className="flex flex-col md:flex-row gap-6 flex-1 min-h-0">
-                    <div className="md:w-72 flex-shrink-0 bg-[#1e1f20] border border-gray-700 rounded-lg p-4 flex flex-col overflow-y-auto">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-6 flex-1 min-h-0">
+                    <div className="md:w-72 flex-shrink-0 bg-[#1e1f20] border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col overflow-y-auto">
                         <div className="space-y-3 mb-4">
                             <input
                                 type="text"
@@ -353,7 +353,7 @@ const HrmrPage: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="flex-1 bg-[#1e1f20] border border-gray-700 rounded-lg p-6 overflow-y-auto min-h-0">
+                    <div className="flex-1 bg-[#1e1f20] border border-gray-700 rounded-lg p-3 md:p-6 overflow-y-auto min-h-0">
                         {selectedRating ? (
                             <div className="h-full flex flex-col gap-4 overflow-y-auto min-h-0">
                                 <div className="flex flex-wrap items-center gap-3">
@@ -450,8 +450,8 @@ const HrmrPage: React.FC = () => {
 
             {/* Performance Timeline Tab */}
             {activeTab === 'timeline' && (
-                <div className="flex flex-col gap-6 flex-1 min-h-0 overflow-hidden">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex flex-col gap-4 md:gap-6 flex-1 min-h-0 overflow-hidden">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
                         <div className="bg-[#1e1f20] border border-gray-700 rounded-lg p-4">
                             <p className="text-xs uppercase tracking-wider text-gray-500">Overview</p>
                             <div className="mt-3 space-y-2 text-sm text-gray-300">

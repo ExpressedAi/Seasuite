@@ -112,7 +112,7 @@ const ProgressionPage: React.FC = () => {
 
   return (
     <div className="h-full overflow-y-auto bg-[#26282B] text-white">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 md:gap-6 px-3 md:px-6 py-4 md:py-8">
         <header className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <h1 className="text-3xl font-semibold tracking-tight">Skill Tree</h1>
@@ -152,7 +152,7 @@ const ProgressionPage: React.FC = () => {
           </div>
         )}
 
-        <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <section className="grid grid-cols-1 gap-3 md:gap-4 md:grid-cols-3">
           {progress && (
             Object.entries(progress.branchXp).map(([branchId, xp]) => {
               const branch = SKILL_BRANCHES[branchId as keyof typeof SKILL_BRANCHES];
@@ -177,7 +177,7 @@ const ProgressionPage: React.FC = () => {
         <section className="rounded-xl border border-gray-800 bg-[#1B1C1F] p-6">
           <h2 className="text-lg font-semibold text-blue-300">Branches</h2>
           <p className="text-xs text-gray-500">Select a branch below to unlock perks. Costs are in branch-specific XP.</p>
-          <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-2">
+          <div className="mt-4 md:mt-6 grid grid-cols-1 gap-4 md:gap-5 lg:grid-cols-2">
             {Object.entries(SKILL_BRANCHES).map(([branchId, meta]) => (
                 <div key={branchId} className="rounded-lg border border-gray-800 bg-[#111315] p-4">
                 <div className="flex items-center justify-between">
@@ -243,7 +243,7 @@ const ProgressionPage: React.FC = () => {
               {activeMissions.length} active
             </span>
           </div>
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-3 md:gap-4 md:grid-cols-2">
             {activeMissions.length === 0 && (
               <div className="rounded-lg border border-gray-800 bg-[#111315] p-4 text-sm text-gray-500">
                 Missions will appear here as you progress.

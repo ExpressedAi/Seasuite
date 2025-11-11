@@ -270,9 +270,9 @@ const PrivateDMsPage: React.FC = () => {
   };
 
   return (
-    <div className="flex h-full bg-[#26282B] text-white">
+    <div className="flex flex-col md:flex-row h-full bg-[#26282B] text-white">
       {/* Sidebar */}
-      <aside className="flex w-[22rem] flex-col border-r border-gray-900 bg-[#1E1F22]">
+      <aside className="flex w-full md:w-[22rem] flex-col border-b md:border-r md:border-b-0 border-gray-900 bg-[#1E1F22]">
         <div className="border-b border-gray-900 p-5">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Private Channels</h2>
@@ -360,7 +360,7 @@ const PrivateDMsPage: React.FC = () => {
       <section className="flex flex-1 flex-col">
         {selectedConv ? (
           <>
-            <header className="border-b border-gray-900 bg-[#1A1C1F] p-6">
+            <header className="border-b border-gray-900 bg-[#1A1C1F] p-3 md:p-6">
               <div className="flex flex-wrap items-center gap-3">
                 <h1 className="text-2xl font-semibold tracking-tight">
                   {buildConversationLabel(selectedConv.participant1Id, selectedConv.participant2Id, performerLookup)}
@@ -374,7 +374,7 @@ const PrivateDMsPage: React.FC = () => {
               </p>
             </header>
 
-            <div className="flex-1 space-y-4 overflow-y-auto bg-[#18191D] p-6">
+            <div className="flex-1 space-y-3 md:space-y-4 overflow-y-auto bg-[#18191D] p-3 md:p-6">
               {selectedConv.messages.length === 0 ? (
                 <div className="mt-20 text-center text-sm text-gray-500">
                   No messages yet. Kick off the exchange below.
@@ -384,7 +384,7 @@ const PrivateDMsPage: React.FC = () => {
                   const isSender = chat.senderId === asPerformerId;
                   return (
                     <div key={chat.id} className={`flex ${isSender ? 'justify-end' : 'justify-start'}`}>
-                      <div className={`max-w-[70%] rounded-2xl border px-4 py-3 text-sm shadow-lg ${
+                      <div className={`max-w-full md:max-w-[70%] rounded-2xl border px-3 md:px-4 py-2 md:py-3 text-sm shadow-lg ${
                         isSender
                           ? 'border-blue-500/40 bg-blue-600/90 text-white'
                           : 'border-gray-800 bg-[#1F2126] text-gray-200'
@@ -407,7 +407,7 @@ const PrivateDMsPage: React.FC = () => {
               <div ref={messagesEndRef} />
             </div>
 
-            <footer className="border-t border-gray-900 bg-[#1A1C1F] p-6">
+            <footer className="border-t border-gray-900 bg-[#1A1C1F] p-3 md:p-6">
               <div className="mb-3 flex flex-wrap items-center gap-3">
                 <label className="text-xs font-semibold uppercase tracking-wide text-gray-500">Speak as</label>
                 <select

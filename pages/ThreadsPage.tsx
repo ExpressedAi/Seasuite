@@ -151,7 +151,7 @@ const ThreadsPage: React.FC = () => {
     const selectedThread = selectedThreadId ? threads.find(t => t.id === selectedThreadId) : null;
 
     return (
-        <div className="p-8 h-full flex flex-col gap-6 overflow-y-auto">
+        <div className="p-3 md:p-8 h-full flex flex-col gap-4 md:gap-6 overflow-y-auto">
             <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
                     <h1 className="text-4xl font-bold text-gray-100">Conversation Threads</h1>
@@ -164,8 +164,8 @@ const ThreadsPage: React.FC = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-6 flex-1 min-h-0">
-                <div className="md:w-72 flex-shrink-0 bg-[#1e1f20] border border-gray-700 rounded-lg p-4 flex flex-col overflow-y-auto">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 flex-1 min-h-0">
+                <div className="md:w-72 flex-shrink-0 bg-[#1e1f20] border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col overflow-y-auto">
                     <div className="mb-4">
                         <input
                             type="text"
@@ -199,10 +199,10 @@ const ThreadsPage: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="flex-1 bg-[#1e1f20] border border-gray-700 rounded-lg p-6 overflow-y-auto flex flex-col min-h-0">
+                <div className="flex-1 bg-[#1e1f20] border border-gray-700 rounded-lg p-3 md:p-6 overflow-y-auto flex flex-col min-h-0">
                     {selectedThread && formState ? (
-                        <div className="flex-1 flex flex-col gap-6 overflow-y-auto min-h-0">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div className="flex-1 flex flex-col gap-4 md:gap-6 overflow-y-auto min-h-0">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
                                 <div className="space-y-4">
                                     <div>
                                         <label className="block text-xs font-semibold text-gray-400 uppercase mb-2">Title</label>
@@ -252,23 +252,23 @@ const ThreadsPage: React.FC = () => {
                                 </div>
                             </div>
 
-                            <div className="flex flex-wrap items-center gap-3">
+                            <div className="flex flex-wrap items-center gap-2 md:gap-3">
                                 <button
                                     onClick={handleSave}
                                     disabled={isSaving}
-                                    className={`px-4 py-2 rounded-md text-sm font-semibold transition-colors ${isSaving ? 'bg-blue-700 cursor-wait' : 'bg-blue-600 hover:bg-blue-500'} text-white`}
+                                    className={`px-3 md:px-4 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-semibold transition-colors ${isSaving ? 'bg-blue-700 cursor-wait' : 'bg-blue-600 hover:bg-blue-500'} text-white`}
                                 >
                                     {isSaving ? 'Saving…' : 'Save Metadata'}
                                 </button>
                                 <button
                                     onClick={handleSyncJournal}
-                                    className="px-4 py-2 rounded-md text-sm font-semibold transition-colors bg-purple-600 hover:bg-purple-500 text-white"
+                                    className="px-3 md:px-4 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-semibold transition-colors bg-purple-600 hover:bg-purple-500 text-white"
                                 >
                                     Sync to Journal
                                 </button>
                                 <button
                                     onClick={handleDelete}
-                                    className="px-4 py-2 rounded-md text-sm font-semibold transition-colors bg-red-600 hover:bg-red-500 text-white ml-auto"
+                                    className="px-3 md:px-4 py-1.5 md:py-2 rounded-md text-xs md:text-sm font-semibold transition-colors bg-red-600 hover:bg-red-500 text-white ml-auto"
                                 >
                                     Delete Thread
                                 </button>
